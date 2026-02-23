@@ -1,0 +1,467 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VOGEL ROOFING, INC - Reliable Roofing Contractor in Denver, Colorado. 5-Star Rated | Local Experts. Call (303) 815-0640 for a free quote.">
+    <meta name="keywords" content="Denver Roofing, Roof Replacement, Storm Damage Repair, Denver, Colorado">
+    <meta name="author" content="VOGEL ROOFING, INC">
+    <title>VOGEL ROOFING, INC | Denver, Colorado</title>
+    
+    <!-- Fonts & Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- THEME --- */
+        :root {
+            --paper: #f9f7f2;
+            --white: #ffffff;
+            --ink: #2c3e50;
+            --red: #c0392b;
+            --gold: #d4ac0d;
+            --border: 1px solid #e0ddd5;
+            --double-border: 4px double #e0ddd5;
+            --shadow: 0 4px 20px rgba(44, 62, 80, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            background-color: var(--paper); 
+            color: var(--ink); 
+            font-family: 'Lato', sans-serif; 
+            line-height: 1.8;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+        }
+        
+        h1, h2, h3, h4 { font-family: 'Merriweather', serif; color: var(--ink); font-weight: 900; letter-spacing: -0.5px; }
+        a { text-decoration: none; color: inherit; transition: 0.3s ease; }
+        ul { list-style: none; }
+        img { width: 100%; display: block; border-radius: 4px; }
+
+        .container { max-width: 1080px; margin: 0 auto; padding: 0 30px; }
+        .section-padding { padding: 90px 0; }
+        .text-center { text-align: center; }
+        .grid { display: grid; gap: 40px; }
+        
+        /* BUTTONS */
+        .btn { 
+            display: inline-block; padding: 14px 30px; border-radius: 4px; 
+            font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;
+            cursor: pointer; border: none; transition: all 0.3s ease;
+        }
+        .btn-primary { 
+            background-color: var(--red); color: var(--white); 
+            border-bottom: 3px solid rgba(0,0,0,0.2); 
+        }
+        .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+        .btn-outline { border: 2px solid var(--ink); color: var(--ink); background: transparent; }
+        .btn-outline:hover { background-color: var(--ink); color: var(--white); }
+
+        /* HEADERS */
+        .section-header { margin-bottom: 60px; text-align: center; }
+        .section-header h2 { font-size: 2.6rem; position: relative; display: inline-block; padding-bottom: 15px; }
+        .section-header h2::after {
+            content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+            width: 80px; height: 3px; background-color: var(--red);
+        }
+
+        /* NAVBAR */
+        header { background: var(--white); border-bottom: var(--double-border); position: sticky; top: 0; z-index: 1000; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; }
+        .logo { font-family: 'Merriweather', serif; font-size: 1.4rem; font-weight: 900; color: var(--ink); display: flex; align-items: center; gap: 12px; }
+        .logo i { color: var(--red); font-size: 1.2rem; }
+        .nav-menu { display: flex; gap: 35px; }
+        .nav-link { font-weight: 700; font-size: 0.95rem; color: #555; text-transform: uppercase; letter-spacing: 0.5px; padding-bottom: 5px; border-bottom: 2px solid transparent; cursor: pointer;}
+        .nav-link:hover, .nav-link.active { color: var(--red); border-bottom-color: var(--red); }
+        .hamburger { display: none; font-size: 1.5rem; cursor: pointer; color: var(--ink); }
+
+        /* SECTIONS */
+        .page-section { display: none; animation: fadeIn 0.5s ease; }
+        .page-section.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* HERO */
+        .hero { padding: 80px 0; border-bottom: var(--border); background: linear-gradient(to bottom, #fff, var(--paper)); }
+        .hero-container { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .hero h1 { font-size: 3.2rem; margin-bottom: 20px; line-height: 1.2; color: var(--ink); }
+        .hero p { font-size: 1.2rem; margin-bottom: 35px; color: #555; font-family: 'Merriweather', serif; font-style: italic; }
+        .badge { background: var(--gold); color: #fff; padding: 6px 14px; border-radius: 2px; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 25px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+        .hero-img-frame { padding: 10px; border: 1px solid #ccc; background: white; box-shadow: 10px 10px 0px rgba(0,0,0,0.05); transform: rotate(2deg); }
+
+        /* CARDS */
+        .services-container { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        .service-card { background: var(--white); padding: 35px; border: 1px solid #e0ddd5; text-align: center; transition: 0.3s; position: relative; }
+        .service-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+        .icon-box { width: 70px; height: 70px; margin: 0 auto 25px; color: var(--ink); font-size: 2rem; border: 2px solid var(--paper); border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--paper); }
+        .service-card h3 { margin-bottom: 12px; font-size: 1.3rem; }
+
+        /* ABOUT */
+        .about-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: center; }
+        .about-img { border: 10px solid var(--white); box-shadow: var(--shadow); }
+        .check-list { border-top: 1px solid #ddd; padding-top: 20px; margin-top: 20px; }
+        .check-list li { margin-bottom: 12px; display: flex; gap: 15px; align-items: center; color: #444; }
+        .check-list i { color: var(--red); font-size: 0.9rem; }
+
+        /* REVIEWS */
+        .testimonial-card { background: var(--white); max-width: 800px; margin: 0 auto; padding: 60px; border: var(--double-border); text-align: center; position: relative; }
+        /* !!! THE FIX IS HERE (Double Backslash) !!! */
+        .testimonial-card::before { content: '\201C'; font-family: 'Merriweather', serif; font-size: 8rem; color: #f0f0f0; position: absolute; top: -20px; left: 20px; z-index: 0; }
+        .stars { color: var(--gold); margin-bottom: 20px; position: relative; z-index: 1; }
+        .review-text { font-size: 1.3rem; font-family: 'Merriweather', serif; font-style: italic; color: #333; margin-bottom: 30px; position: relative; z-index: 1; }
+        .reviewer { font-weight: 700; color: var(--red); text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; position: relative; z-index: 1; }
+
+        /* CONTACT */
+        .contact-wrapper { display: grid; grid-template-columns: 1fr 1.5fr; background: var(--white); border: 1px solid #ddd; box-shadow: var(--shadow); }
+        .contact-info { background: var(--ink); color: var(--white); padding: 50px; }
+        .contact-info h3 { color: var(--white); border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 15px; margin-bottom: 30px; }
+        .info-item { display: flex; gap: 15px; margin-bottom: 25px; align-items: flex-start; }
+        .info-item i { color: var(--gold); margin-top: 5px; }
+        .contact-form { padding: 50px; }
+        .form-group { margin-bottom: 20px; }
+        .form-label { display: block; margin-bottom: 8px; font-weight: 700; color: var(--ink); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .form-control { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 2px; font-size: 1rem; font-family: 'Merriweather', serif; background: #fafafa; }
+        
+        .sticky-btns { position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 2000; }
+        .float-btn { width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.6rem; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: 0.3s; border: 2px solid white; }
+        .float-btn:hover { transform: scale(1.1); }
+        .phone-btn { background-color: var(--red); }
+        
+        footer { background: var(--ink); color: #ccc; padding: 50px 0; border-top: 4px solid var(--red); text-align: center; }
+        
+        @media (max-width: 900px) {
+            .hero-container { grid-template-columns: 1fr; text-align: center; }
+            .hero-img-frame { width: 80%; margin: 0 auto; transform: rotate(0); }
+            .nav-menu { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--white); flex-direction: column; padding: 30px; border-bottom: 2px solid var(--red); }
+            .nav-menu.active { display: flex; }
+            .hamburger { display: block; }
+            .about-grid, .contact-wrapper { grid-template-columns: 1fr; }
+            .sticky-btns { bottom: 80px; right: 20px; }
+            .mobile-bar { display: flex; position: fixed; bottom: 0; left: 0; width: 100%; background: var(--ink); z-index: 1999; justify-content: space-around; padding: 12px 0; }
+            .mobile-link { display: flex; flex-direction: column; align-items: center; font-size: 0.75rem; color: #aaa; }
+            .mobile-link i { font-size: 1.2rem; margin-bottom: 4px; }
+            .mobile-link.active { color: var(--white); }
+        }
+        @media (min-width: 901px) { .mobile-bar { display: none; } }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container navbar">
+            <div class="logo">
+                <i class="fas fa-hammer"></i> VOGEL ROOFING, INC
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-link active" onclick="router('home')">Home</li>
+                <li class="nav-link" onclick="router('about')">Our Story</li>
+                <li class="nav-link" onclick="router('services')">What We Do</li>
+                <li class="nav-link" onclick="router('reviews')">Testimonials</li>
+                <li><button onclick="router('contact')" class="btn btn-primary">Get Quote</button></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- 1. HOME PAGE -->
+    <section id="home" class="page-section active">
+        <div class="hero">
+            <div class="container hero-container">
+                <div>
+                    <div class="badge">
+                        <i class="fas fa-certificate"></i> 5-Star Rated | Local Experts
+                    </div>
+                    <h1>Denver's Premier Roofing Experts: Protecting Your Home with Quality and Craftsmanship</h1>
+                    <p>Experience unparalleled durability and peace of mind with VOGEL ROOFING, INC – your trusted partner for superior roofing solutions in Denver.</p>
+                    <div>
+                        <button onclick="router('contact')" class="btn btn-primary" style="margin-right: 15px;">Get a Free Quote</button>
+                        <a href="tel:3038150640" class="btn btn-outline">Call (303) 815-0640</a>
+                    </div>
+                </div>
+                <div class="hero-img-frame">
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80" alt="Worker">
+                </div>
+            </div>
+        </div>
+
+        <div class="section-padding container">
+            <div class="section-header">
+                <h2>Our Core Services</h2>
+            </div>
+            <div class="grid services-container">
+                <!-- Core Service 1 -->
+                <div class="service-card">
+                    <div class="icon-box"><i class="fas fa-screwdriver-wrench"></i></div>
+                    <h3>Residential Roof Replacement</h3>
+                    <p>Upgrade your home's protection and curb appeal with our expert roof replacement services, utilizing top-grade materials for lasting durability.</p>
+                </div>
+                <!-- Core Service 2 -->
+                <div class="service-card">
+                    <div class="icon-box"><i class="fas fa-hammer"></i></div>
+                    <h3>Storm Damage Repair</h3>
+                    <p>Fast, reliable, and thorough repairs for roofs damaged by hail, wind, or severe weather, ensuring your home is secure and restored quickly.</p>
+                </div>
+                <!-- Core Service 3 -->
+                <div class="service-card">
+                    <div class="icon-box"><i class="fas fa-clipboard-check"></i></div>
+                    <h3>Comprehensive Roof Inspections</h3>
+                    <p>Detailed assessments to identify potential issues early, helping you avoid costly future repairs and extend your roof's lifespan effectively.</p>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 50px;">
+                <button onclick="router('services')" class="btn btn-outline">View All Services</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. ABOUT PAGE -->
+    <section id="about" class="page-section">
+        <div class="section-padding container">
+            <div class="about-grid">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80" alt="Tools">
+                </div>
+                <div>
+                    <div class="section-header" style="text-align: left; margin-bottom: 30px;">
+                        <h2>About VOGEL ROOFING, INC</h2>
+                    </div>
+                    <p style="margin-bottom: 20px; font-size: 1.15rem; font-family: 'Merriweather', serif;">
+                        We are a trusted <strong>Roofing Contractor</strong> serving <strong>Denver, Colorado</strong>.
+                    </p>
+                    <p style="margin-bottom: 20px; color: #666;">
+                        VOGEL ROOFING, INC has proudly served the Denver community for over a decade, establishing a reputation for unparalleled quality and customer satisfaction. As a locally owned and operated roofing contractor, we understand the unique challenges Denver homes face, from harsh winters to intense summer storms. Our team of certified and experienced professionals is dedicated to providing superior roofing solutions, whether you need a complete roof replacement, emergency storm damage repair, or a thorough inspection. We use only the highest-grade materials, adhering to the strictest industry standards to ensure every project is completed with precision and durability. At VOGEL ROOFING, INC, your home's protection is our priority, and we strive to deliver not just a new roof, but lasting peace of mind. We are committed to transparent communication, timely project completion, and exceptional craftsmanship, making us the trusted choice for homeowners across Denver.
+                    </p>
+                    <ul class="check-list">
+                        <li><i class="fas fa-star"></i> Certified & Experienced Professionals</li>
+                        <li><i class="fas fa-star"></i> Premium Materials for Lasting Durability</li>
+                        <li><i class="fas fa-star"></i> Local Denver Expertise & Insight</li>
+                        <li><i class="fas fa-star"></i> Comprehensive Warranty & Support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. SERVICES PAGE -->
+    <section id="services" class="page-section">
+        <div class="section-padding container">
+            <div class="section-header">
+                <h2>All Services</h2>
+                <p style="margin-top: 15px; color: #666;">Comprehensive solutions for your needs.</p>
+            </div>
+            
+            <div class="grid services-container">
+                <div class="service-card">
+                    <div class="icon-box"><i class="fas fa-home"></i></div>
+                    <h3>Residential Roof Installation</h3>
+                    <p>Expert installation of new roofing systems for homes, including asphalt shingles, metal roofing, and tile, customized to your property's needs and aesthetic.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-box"><i class="fas fa-building"></i></div>
+                    <h3>Commercial Roofing Solutions</h3>
+                    <p>Specialized roofing services for commercial properties, offering durable and efficient solutions for flat roofs, TPO, EPDM, and modified bitumen systems.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-box"><i class="fas fa-cloud-showers-heavy"></i></div>
+                    <h3>Roof Leak Detection & Repair</h3>
+                    <p>Prompt and precise identification and repair of roof leaks, preventing further water damage and extending the life of your existing roof.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-box"><i class="fas fa-water"></i></div>
+                    <h3>Gutter Installation & Repair</h3>
+                    <p>Professional gutter services to ensure proper water drainage, protecting your foundation and landscaping from water damage.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-box"><i class="fas fa-layer-group"></i></div>
+                    <h3>Skylight Installation & Repair</h3>
+                    <p>Enhance natural light and ventilation with expert skylight installation or repair, seamlessly integrated into your roofing system.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-box"><i class="fas fa-sun"></i></div>
+                    <h3>Preventative Roof Maintenance</h3>
+                    <p>Proactive maintenance programs designed to identify and address minor issues before they become major problems, preserving your roof's integrity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. REVIEWS PAGE -->
+    <section id="reviews" class="page-section">
+        <div class="section-padding container">
+            <div class="section-header">
+                <h2>What Clients Say</h2>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">
+                    "Vogel Roofing was fantastic! They replaced our roof after a hail storm quickly and professionally. The communication was excellent, and the crew was incredibly tidy. Our new roof looks amazing, and we feel much safer. Highly recommend their services!"
+                </p>
+                <div class="reviewer">- Sarah M.</div>
+                <small style="color: #999; display: block; margin-top: 5px;">Google Review</small>
+            </div>
+
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-top: 50px;">
+                <div class="service-card" style="text-align: left; padding: 30px;">
+                    <div class="stars" style="font-size: 0.9rem;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p style="font-size: 0.95rem; margin-bottom: 10px; font-style: italic;">"Outstanding service from start to finish. Our roof replacement was seamless, and the quality is top-notch. Truly professional."</p>
+                    <strong>- Satisfied Client</strong>
+                </div>
+                <div class="service-card" style="text-align: left; padding: 30px;">
+                    <div class="stars" style="font-size: 0.9rem;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p style="font-size: 0.95rem; margin-bottom: 10px; font-style: italic;">"Couldn't be happier with the storm damage repair. Vogel Roofing responded fast, handled the insurance, and did an excellent job."</p>
+                    <strong>- Happy Homeowner</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. CONTACT PAGE -->
+    <section id="contact" class="page-section">
+        <div class="section-padding container">
+            <div class="section-header">
+                <h2>Request a Quote</h2>
+                <p style="margin-top: 10px;">Tell us about your project and we'll get back to you asap.</p>
+            </div>
+
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3 style="margin-bottom: 25px; font-size: 1.5rem;">Contact Info</h3>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <strong>Phone</strong><br>
+                            <a href="tel:3038150640" style="color: rgba(255,255,255,0.8);">(303) 815-0640</a>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Location</strong><br>
+                            <span style="color: rgba(255,255,255,0.8);">1230 S Navajo St, Denver, CO 80223</span>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email</strong><br>
+                            <span style="color: rgba(255,255,255,0.8);">info@vogelroofing.com</span>
+                        </div>
+                    </div>
+
+                    <!-- Map -->
+                    <div style="margin-top: 30px; height: 200px; background: #1a252f; border: 1px solid #444; display: flex; align-items: center; justify-content: center; color: #94a3b8; overflow: hidden;">
+                        <iframe width="100%" height="100%" frameborder="0" style="border:0;" src="https://www.google.com/maps?q=Denver, Colorado&output=embed" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form id="enquiryForm" onsubmit="submitForm(event)">
+                        <div class="form-group">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-control" required placeholder="John Doe">
+                        </div>
+                        <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div class="form-group">
+                                <label class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" required placeholder="(303) 815-0640">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Service Type</label>
+                                <select class="form-control" required>
+                                    <option value="">Select...</option>
+                                    <option>Residential Roof Replacement</option>
+                                    <option>Storm Damage Repair</option>
+                                    <option>Comprehensive Roof Inspections</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Message</label>
+                            <textarea class="form-control" rows="5" required placeholder="Describe your project..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <h4>VOGEL ROOFING, INC</h4>
+            <p style="margin-bottom: 20px;">Serving Denver, Colorado since 2008.</p>
+            <p style="font-size: 0.85rem; color: #999;">&copy; 2026 All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- STICKY BUTTONS -->
+    <div class="sticky-btns">
+        <a href="tel:3038150640" class="float-btn phone-btn" title="Call Now">
+            <i class="fas fa-phone"></i>
+        </a>
+    </div>
+
+    <!-- MOBILE NAV BOTTOM -->
+    <div class="mobile-bar">
+        <div class="mobile-link" onclick="router('home')"><i class="fas fa-home"></i>Home</div>
+        <div class="mobile-link" onclick="router('services')"><i class="fas fa-tools"></i>Services</div>
+        <div class="mobile-link" onclick="router('reviews')"><i class="fas fa-star"></i>Reviews</div>
+        <div class="mobile-link" onclick="router('contact')" style="color: var(--white); font-weight: bold;"><i class="fas fa-paper-plane"></i>Quote</div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Router function to switch sections
+        function router(pageId) {
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(sec => sec.classList.remove('active'));
+            
+            document.getElementById(pageId).classList.add('active');
+            window.scrollTo(0, 0);
+
+            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if(link.textContent.toLowerCase().includes(pageId) || 
+                  (pageId === 'home' && link.textContent === 'Home')) {
+                    link.classList.add('active');
+                }
+            });
+
+            document.getElementById('navMenu').classList.remove('active');
+        }
+
+        function toggleMenu() {
+            document.getElementById('navMenu').classList.toggle('active');
+        }
+
+        function submitForm(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerText;
+            
+            btn.innerText = "Sending...";
+            btn.style.opacity = "0.7";
+            
+            setTimeout(() => {
+                alert("Success! We have received your request and will call you at (303) 815-0640 shortly.");
+                e.target.reset();
+                btn.innerText = originalText;
+                btn.style.opacity = "1";
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
